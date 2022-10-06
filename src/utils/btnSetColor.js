@@ -1,31 +1,31 @@
-export const btnSetColor = (setColor,value) => {
+export const btnSetColor = (setColor, value) => {
   switch (value) {
     case "C":
-      setColor("btn-danger");
+      setColor("#990513");
       break;
     case "back":
-      setColor("btn-danger");
+      setColor("#bd2b3a");
       break;
     case "=":
-      setColor("btn-success");
+      setColor("darkgreen");
       break;
     case "toggle":
-      setColor("btn-warning");
+      setColor("#C88304");
       break;
     case "+":
-      setColor("btn-info");
+      setColor("#bd2b3a");
       break;
     case "-":
-      setColor("btn-info");
+      setColor("#bd2b3a");
       break;
     case "*":
-      setColor("btn-info");
+      setColor("#bd2b3a");
       break;
     case "/":
-      setColor("btn-info");
+      setColor("#bd2b3a");
       break;
     default:
-      setColor("btn-dark");
+      setColor("#f0de5b");
       break;
   }
 };

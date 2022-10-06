@@ -10,9 +10,11 @@ export default function Button({ value, handleButton, children }) {
 
   return (
     <motion.button
+    style={{backgroundColor:`${Color}`}}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className={`btn ${Color} w-100 m-2 fw-bold`}
+      className="btn w-100 text-black m-2 border-0 fw-bold"
+
       onClick={() => handleButton(value)}
     >
       {children}

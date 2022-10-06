@@ -39,7 +39,8 @@ function App() {
   return (
     <motion.div initial={{scale:0.5}} animate={{scale:1}} className="w-100 position-fixed h-100 d-flex justify-content-center align-items-center ">
       <div
-        className="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 p-3 bg-black border border-3 border-white rounded-3"
+      style={{backgroundColor:"#242424"}}
+        className="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 p-3 border border-3 border-white rounded-3"
       >
         <div
           className={` ${
