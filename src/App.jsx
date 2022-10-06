@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {motion} from 'framer-motion'
 import Button from "./components/Button";
 function App() {
   const [isOn, setIsOn] = useState(false);
@@ -14,13 +15,13 @@ function App() {
               // eslint-disable-next-line no-eval
               return eval(prev).toString();
             } catch (err) {
-              return "Expression had a problem , press C to continue...";
+              return "Expression had a problem, press C";
             }
           }
         });
         break;
       case "back":
-        setBar(prev=>prev.slice(0,-1))
+        setBar((prev) => prev.slice(0, -1));
         break;
       case "C":
         setBar("");
@@ -36,17 +37,22 @@ function App() {
     }
   };
   return (
-    <div className="w-100 position-fixed h-100 d-flex justify-content-center align-items-center ">
-      <div style={{boxShadow:"0px 0px 10px 20px white"}} className="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 p-3 bg-black rounded-3">
+    <motion.div initial={{scale:0.5}} animate={{scale:1}} className="w-100 position-fixed h-100 d-flex justify-content-center align-items-center ">
+      <div
+        className="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 p-3 bg-black border border-3 border-white rounded-3"
+      >
         <div
           className={` ${
             isOn
               ? "text-white bg-dark"
-              : "justify-content-center text-danger bg-black border border-1 border-light"
-          }  p-2 fw-bold fs-6 rounded-3 d-flex align-items-center`}
-          style={{ height: 50 }}
+              : "justify-content-center text-danger bg-black"
+          }  p-2 mb-2 fw-bold fs-3 rounded-3  border border-2 border-light d-flex align-items-center overflow-auto`}
         >
-          {isOn ? bar : "H E N R Y - A L L E N"}
+          {isOn
+            ? bar.length === 0
+              ? <span className="m-auto">(●'◡'●)</span>
+              : bar
+            : "H E N R Y - A L L E N"}
         </div>
         <div className="row text-center">
           <div className="col-10">
@@ -182,7 +188,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { btnSetColor } from "../utils/btnSetColor";
-
+import { motion } from "framer-motion";
 export default function Button({ value, handleButton, children }) {
   const [Color, setColor] = useState("");
   useEffect(() => {
@@ -9,13 +9,13 @@ export default function Button({ value, handleButton, children }) {
   }, []);
 
   return (
-    <>
-      <button
-        className={`btn ${Color} w-100 m-2 fw-bold`}
-        onClick={() => handleButton(value)}
-      >
-        {children}
-      </button>
-    </>
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className={`btn ${Color} w-100 m-2 fw-bold`}
+      onClick={() => handleButton(value)}
+    >
+      {children}
+    </motion.button>
   );
 }
